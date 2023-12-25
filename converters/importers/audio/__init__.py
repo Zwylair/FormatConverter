@@ -5,7 +5,7 @@ import pydub
 
 class AudioImporter:
     def __init__(self, target_file: io.BytesIO | str | bytes):
-        self.decoded_audio: Any = None
+        self.decoded_media: Any = None
 
 
 class PyDubImport(AudioImporter):
@@ -14,4 +14,4 @@ class PyDubImport(AudioImporter):
 
         if isinstance(target_file, bytes):
             target_file = io.BytesIO(target_file)
-        self.decoded_audio = pydub.AudioSegment.from_file(target_file)
+        self.decoded_media = pydub.AudioSegment.from_file(target_file)
